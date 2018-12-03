@@ -5,6 +5,7 @@ import { AppComponent } from './app.component';
 import { GameComponent } from './game/game.component';
 
 import { HttpClientModule } from '@angular/common/http';
+import { CardServiceService } from './services/card-service.service';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,7 @@ import { HttpClientModule } from '@angular/common/http';
     BrowserModule,
     HttpClientModule,
   ],
-  providers: [],
+  providers: [CardServiceService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
