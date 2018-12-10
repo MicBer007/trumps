@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Deck } from '../Data/Deck';
+import { Deck } from '../model/Deck';
 
 @Component({
   selector: 'app-game',
@@ -12,7 +12,6 @@ export class GameComponent implements OnInit {
 
   ngOnInit() {
     this.deck = new Deck();
-    this.deck.getCards
   }
 
 }

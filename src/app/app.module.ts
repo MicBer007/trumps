@@ -5,18 +5,20 @@ import { AppComponent } from './app.component';
 import { GameComponent } from './game/game.component';
 
 import { HttpClientModule } from '@angular/common/http';
-import { CardServiceService } from './services/card-service.service';
+import { DeckData } from './data/DeckData';
+import { DeckBuilderComponent } from './components/deck-builder/deck-builder.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    GameComponent
+    GameComponent,
+    DeckBuilderComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
   ],
-  providers: [CardServiceService],
+  providers: [DeckData],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
