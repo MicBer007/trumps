@@ -15,6 +15,7 @@ export class DeckBuilderComponent implements OnInit {
 
   ngOnInit() {
     this.deck = this.deckService.getDeck();
+    this.deck.suffle();
   }
 
 

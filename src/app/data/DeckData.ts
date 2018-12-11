@@ -11,6 +11,10 @@ export class DeckData {
 
   suites:string[] = ['♠', '♦', '♥', '♣'];
 
+  get getCards() {
+    return this.cards;
+  }
+
   constructor() {
     
    
@@ -34,10 +38,6 @@ export class DeckData {
 
     return newDeck;
 
-  }
-
-  getCards():Card[] {
-    return this.cards;
   }
 
 }

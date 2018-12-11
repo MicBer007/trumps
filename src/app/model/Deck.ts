@@ -8,17 +8,23 @@ export class Deck {
         
     }
 
-    suffle(): void {
+    suffle(): Deck {
+
         let j;
         let temp;
-        for (let i = 0; i < this.cards.length; i++) {
+
+        let deck: Deck = this;
+        
+        for (let i = 0; i < deck.cards.length; i++) {
     
-          j = Math.random() * i + 1;
-          temp = this.cards[i];
-          this.cards[i] = this.cards[j];
-          this.cards[j] = temp;
+            j = Math.floor(Math.random() * deck.cards.length)
+            temp = deck.cards[i];
+            deck.cards[i] = deck.cards[j];
+            deck.cards[j] = temp;
           
         }
+
+        return deck;
     }
 
 }
