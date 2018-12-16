@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Deck } from '../model/Deck';
+import { Player } from '../model/Player';
 
 @Component({
   selector: 'app-game',
@@ -8,10 +9,28 @@ import { Deck } from '../model/Deck';
 })
 export class GameComponent implements OnInit {
 
-  constructor(private deck:Deck) { }
+  amountOfPlayers: number = 4;
+
+  deck:Deck;
+
+  players: Player[];
+
+  constructor( ) { }
 
   ngOnInit() {
+
     this.deck = new Deck();
+
+    this.players = [];
+
+    for(let i = 0; i < this.amountOfPlayers; i++) {
+
+      this.players.push(new Player());
+
+    }
+
+    this.deck.dealCardToAllPlayers(this.players);
+    
   }
 
 }
