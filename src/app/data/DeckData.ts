@@ -1,4 +1,4 @@
-import { Card } from "../model/card";
+import { Card } from "../model/Card";
 import { Deck } from "../model/Deck";
 
 export class DeckData {
@@ -34,7 +34,7 @@ export class DeckData {
 
     }
 
-    newDeck.cards = this.cards;
+    newDeck.cardsInDeck = this.cards;
 
     return newDeck;
 

@@ -1,7 +1,9 @@
-<div *ngFor = 'let card of deck.cards'>
+<div *ngFor = "let player of players">
 
-    <div>
-         {{card.text}} 
+    <div *ngFor = "let card of player.cards">
+        {{card.text}}
     </div>
 
 </div>
+
+<br>

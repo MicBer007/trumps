@@ -4,7 +4,7 @@ export class Card {
   rank: string;
 
   get text():string {
-    return `${this.rank} ${this.suite}`;
+    return `${this.rank} of ${this.suite}`;
   }
 
   constructor(suite:string, rank:string) {

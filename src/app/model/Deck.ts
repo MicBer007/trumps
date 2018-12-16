@@ -1,11 +1,48 @@
-import { Card } from "./card";
+import { Card } from "./Card";
+import { Player } from "./Player";
 
 export class Deck {
 
-    cards: Card[];
+    cardsInDeck: Card[] = [];
 
-    constructor(){
+    cardsOutDeck: Card[] = [];
+
+    maxCards: number;
+
+    constructor() {
+
+        this.maxCards = 52;
         
+    }
+
+    dealCardToAllPlayers(players:Player[]): Card[] {
+
+        for(let i = 0; i < players.length; i++) {
+
+            this.DealCardToPlayer(players[i]);
+
+        }
+
+        return this.cardsInDeck;
+
+    }
+
+    RemoveCardFromDeck(card: Card): void {
+
+        this.cardsOutDeck.push(card);
+
+        this.cardsInDeck.splice(this.cardsInDeck.indexOf(card), 1);
+
+    }
+
+    DealCardToPlayer(player: Player) {
+
+        const card: Card = this.GenerateRandomCard();
+
+        this.RemoveCardFromDeck(card)
+
+        player.addCard(card);
+
     }
 
     suffle(): Deck {
@@ -15,16 +52,22 @@ export class Deck {
 
         let deck: Deck = this;
         
-        for (let i = 0; i < deck.cards.length; i++) {
+        for (let i = 0; i < deck.cardsInDeck.length; i++) {
     
-            j = Math.floor(Math.random() * deck.cards.length)
-            temp = deck.cards[i];
-            deck.cards[i] = deck.cards[j];
-            deck.cards[j] = temp;
+            j = Math.floor(Math.random() * deck.cardsInDeck.length);
+            temp = deck.cardsInDeck[i];
+            deck.cardsInDeck[i] = deck.cardsInDeck[j];
+            deck.cardsInDeck[j] = temp;
           
         }
 
         return deck;
+    }
+
+    GenerateRandomCard(): Card {
+
+        return this.cardsInDeck[Math.floor(Math.random() * (this.cardsInDeck.length))];
+
     }
 
 }
