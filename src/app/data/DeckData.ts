@@ -7,9 +7,9 @@ export class DeckData {
 
   cards:Card[] = [];
 
-  ranks:string[] = ['Ace', 'King', 'Queen', 'Jack', '10', '9', '8', '7', '6', '5', '4', '3', '2'];
+  ranks:string[] = ['1', '13', '12', '11', '10', '9', '8', '7', '6', '5', '4', '3', '2'];
 
-  suites:string[] = ['♠', '♦', '♥', '♣'];
+  suites:string[] = ['s', 'd', 'h', 'c'];
 
   get getCards() {
     return this.cards;

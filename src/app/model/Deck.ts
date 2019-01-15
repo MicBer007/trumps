@@ -15,6 +15,28 @@ export class Deck {
         
     }
 
+    randomCard(): Card {
+
+        const card: Card = this.GenerateRandomCard();
+
+        this.RemoveCardFromDeck(card);
+
+        return card;
+
+    }
+
+    placeCardsInDeck() {
+
+        for(let i = 0; i < this.cardsOutDeck.length; i++){
+
+            this.cardsInDeck.push(this.cardsOutDeck[i]);
+
+        }
+
+        this.cardsOutDeck = [];
+
+    }
+
     dealCardToAllPlayers(players:Player[]): Card[] {
 
         for(let i = 0; i < players.length; i++) {

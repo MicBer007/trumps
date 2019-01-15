@@ -4,6 +4,12 @@ export class Player {
 
     cards: Card[] = [];
 
+    tricks: number;
+
+    set setTricks(tricks: number) {
+        this.tricks = tricks;
+    }
+
     constructor() {
 
     }

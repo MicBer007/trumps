@@ -1,9 +1,55 @@
-<!-- <div *ngFor = "let player of players">
+<div *ngFor = "let player of players">
+
+    player {{players.indexOf(player) + 1}}:
+
+    <br>
+
+    <div *ngIf = "player.tricks">
+        {{player.tricks}}
+    </div>
 
     <div *ngFor = "let card of player.cards">
+
         {{card.text}}
+
     </div>
 
 </div>
 
-<br> -->
+<br>
+
+<div>
+        
+    Trump Card
+
+</div>
+
+<div>
+
+    {{trumpCard.text}}
+
+</div>
+
+<br>
+
+<button class = "button" type = "text" (click) = "round()">next round</button>
+
+<div>
+    {{hasDuplicates}}
+</div>
+
+<div *ngIf = "this.phase == 1">
+
+    <div>
+
+        <div>
+            type the amount of tricks you think you can get
+        </div>
+
+        <input placeholder = "tricks" id = "Tricks">
+
+        <button (click) = "setTricks(Tricks)">accept</button>
+
+    </div>
+
+</div>
